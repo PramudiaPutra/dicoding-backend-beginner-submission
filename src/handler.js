@@ -78,9 +78,9 @@ const addBookHandler = (req, h) => {
 
 const getAllBooksHandler = (req, h) => {
   const {
+    name,
     reading,
     finished,
-    name,
   } = req.query;
 
   let data = books;
@@ -115,7 +115,7 @@ const getAllBooksHandler = (req, h) => {
 const getBookByIdHandler = (req, h) => {
   const {bookId} = req.params;
 
-  const book = books.filter((buku) => buku.id === bookId)[0];
+  const book = books.filter((book) => book.id === bookId)[0];
   if (book !== undefined) {
     return {
       status: 'success',
@@ -215,6 +215,7 @@ const deleteBookByIdHandler = (req, h) => {
     response.code(200);
     return response;
   }
+
   const response = h.response({
     status: 'fail',
     message: 'Buku gagal dihapus. Id tidak ditemukan',

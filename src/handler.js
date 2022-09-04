@@ -202,7 +202,7 @@ const editBookByIdHandler = (req, h) => {
   return response;
 };
 
-const deletetBookByIdHandler = (req, h) => {
+const deleteBookByIdHandler = (req, h) => {
   const {bookId} = req.params;
   const index = books.findIndex((book) => book.id === bookId);
 
@@ -228,5 +228,5 @@ module.exports = {
   addBookHandler,
   getBookByIdHandler,
   editBookByIdHandler,
-  deletetBookByIdHandler,
+  deleteBookByIdHandler,
 };

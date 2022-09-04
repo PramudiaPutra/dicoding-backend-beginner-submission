@@ -4,8 +4,8 @@
   "description": "dicoding back-end beginner submission",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "lint": "eslint ./"
+    "start": "nodemon ./src/server.js",
+    "lint": "eslint ./src"
   },
   "author": "Pramudia Putra Pamungkas",
   "license": "ISC",

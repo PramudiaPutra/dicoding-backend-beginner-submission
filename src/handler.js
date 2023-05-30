@@ -16,7 +16,7 @@ const addBookHandler = (req, h) => {
   const id = nanoid(16);
   const finished = (pageCount===readPage);
   const insertedAt = new Date().toISOString();
-  const updateAt = insertedAt;
+  const updatedAt = insertedAt;
 
   const newBook = {
     id,
@@ -30,14 +30,13 @@ const addBookHandler = (req, h) => {
     finished,
     reading,
     insertedAt,
-    updateAt,
+    updatedAt,
   };
 
-  books.push(newBook);
 
-  const isSuccess = books.filter((book) => book.id === id).length > 0;
 
   if (name === undefined) {
+       // eslint-disable-next-line max-len
     const response = h.response({
       status: 'fail',
       message: 'Gagal menambahkan buku. Mohon isi nama buku',
@@ -55,6 +54,9 @@ const addBookHandler = (req, h) => {
     response.code(400);
     return response;
   }
+
+  books.push(newBook);
+  const isSuccess = books.filter((book) => book.id === id).length > 0;
 
   if (isSuccess) {
     const response = h.response({
@@ -74,6 +76,7 @@ const addBookHandler = (req, h) => {
   });
   response.code(500);
   return response;
+
 };
 
 const getAllBooksHandler = (req, h) => {
@@ -86,7 +89,6 @@ const getAllBooksHandler = (req, h) => {
   let data = books;
 
   if (name !== undefined) {
-    // eslint-disable-next-line max-len
     data = data.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
   }
 

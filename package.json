@@ -10,12 +10,21 @@
   "author": "Pramudia Putra Pamungkas",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^20.2.2",
+    "@hapi/hapi": "^20.3.0",
     "nanoid": "^3.3.4"
   },
   "devDependencies": {
     "eslint": "^8.23.0",
     "eslint-config-google": "^0.14.0",
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PramudiaPutra/dicoding-backend-beginner-submission.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/PramudiaPutra/dicoding-backend-beginner-submission/issues"
+  },
+  "homepage": "https://github.com/PramudiaPutra/dicoding-backend-beginner-submission#readme"
 }
